@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="180" pageHeight="700" columnWidth="140" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="986cc9f4-dc06-42c7-8fa0-6ecf77925fe5">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (5)"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="InvoiceNo" class="java.lang.Integer"/>
+	<parameter name="User" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "PRODAZBA"."ID",
+	"PRODAZBA"."SEVKUPNO",
+	"PRODAZBA"."PLATI",
+	"PRODAZBA"."VRATI",
+	"PRODAZBA_PROIZVODI"."KOLICINA",
+	"PRODAZBA_PROIZVODI"."CENA",
+	"PRODAZBA_PROIZVODI"."BARKOD_ID",
+	"PRODAZBA_PROIZVODI"."DATA",
+	"PRODAZBA_PROIZVODI"."ID",
+	"PRODAZBA_PROIZVODI"."VKUPNO",
+	"PRODAZBA_PROIZVODI"."PRODAZBA_ID",
+	"PROIZVODI"."BARKOD",
+	"PROIZVODI"."CENA",
+	"PROIZVODI"."ID",
+	"PROIZVODI"."KOLICINA",
+	"PROIZVODI"."PROIZVOD"
+FROM "PRODAZBA"
+	INNER JOIN "PRODAZBA_PROIZVODI" ON 
+	 "PRODAZBA_PROIZVODI"."PRODAZBA_ID" = "PRODAZBA"."ID" 
+	INNER JOIN "PROIZVODI" ON 
+	 "PRODAZBA_PROIZVODI"."BARKOD_ID" = "PROIZVODI"."BARKOD" 
+WHERE 
+	 "PRODAZBA"."ID" = $P{InvoiceNo}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEVKUPNO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="SEVKUPNO"/>
+		<property name="com.jaspersoft.studio.field.label" value="SEVKUPNO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PLATI" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PLATI"/>
+		<property name="com.jaspersoft.studio.field.label" value="PLATI"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VRATI" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="VRATI"/>
+		<property name="com.jaspersoft.studio.field.label" value="VRATI"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KOLICINA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="KOLICINA"/>
+		<property name="com.jaspersoft.studio.field.label" value="KOLICINA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CENA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CENA"/>
+		<property name="com.jaspersoft.studio.field.label" value="CENA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BARKOD_ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BARKOD_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="BARKOD_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="DATA"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_9" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+	</field>
+	<field name="VKUPNO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="VKUPNO"/>
+		<property name="com.jaspersoft.studio.field.label" value="VKUPNO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PRODAZBA_ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PRODAZBA_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PRODAZBA_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PRODAZBA_PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BARKOD" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="BARKOD"/>
+		<property name="com.jaspersoft.studio.field.label" value="BARKOD"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_13" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CENA"/>
+		<property name="com.jaspersoft.studio.field.label" value="CENA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PROIZVODI"/>
+	</field>
+	<field name="COLUMN_14" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PROIZVODI"/>
+	</field>
+	<field name="COLUMN_15" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="KOLICINA"/>
+		<property name="com.jaspersoft.studio.field.label" value="KOLICINA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PROIZVODI"/>
+	</field>
+	<field name="PROIZVOD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PROIZVOD"/>
+		<property name="com.jaspersoft.studio.field.label" value="PROIZVOD"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PROIZVODI"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group proizvodi"/>
+	<group name="Group proizvodi 1">
+		<groupFooter>
+			<band height="122">
+				<textField>
+					<reportElement x="104" y="12" width="38" height="12" uuid="614a14ff-5d5d-4e81-8661-2778bd4eab28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SEVKUPNO}+" ден"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="-11" y="34" width="52" height="12" uuid="e54b87d2-6856-43b4-b642-e51dccdbb186"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ВО ГОТОВО]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="-12" y="82" width="48" height="13" uuid="f2334ef0-d62f-4453-afbb-753131852681"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ДАТА]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="92" y="81" width="36" height="13" uuid="7d85be3c-185b-43db-a3de-d18bd8441035"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DATA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="104" y="34" width="38" height="12" uuid="5809fbcd-288b-475c-add9-86de30b38be3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PLATI}+" ден"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="-11" y="12" width="92" height="12" uuid="a302760e-fdd3-4649-9005-2e2ff5645f09"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ВКУПНО]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="-11" y="51" width="52" height="13" uuid="5f7a4320-6c74-4120-80bf-3b7dbb980f03"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ЗА ВРАЌАЊЕ]]></text>
+				</staticText>
+				<textField pattern="HH:mm">
+					<reportElement x="128" y="81" width="29" height="13" uuid="7bccbac1-2deb-4365-8c84-5a0774266ef8"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="104" y="51" width="38" height="12" uuid="7ae00a5f-afa8-4d56-b650-17fab7b074da"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{VRATI}+" ден"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="-12" y="99" width="48" height="13" uuid="13a6d820-520b-4aea-918a-86833c1e9990"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[НАПЛАТИЛ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="92" y="99" width="48" height="13" uuid="0baafbfc-30bc-4f5e-849f-41235a730f9f"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{User}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-12" y="121" width="161" height="1" uuid="c17aad5c-40fe-4ce9-a46f-5939551c50d0"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="-15" y="0" width="166" height="1" uuid="7b96217b-6efc-4665-be46-7c4a3961e895"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="0" width="114" height="18" uuid="473ae89a-caf8-4aa7-8c5f-3e4cd0d0c747"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[СМЕТКА БРОЈ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-9" y="42" width="160" height="18" uuid="5c5047a4-893a-4449-b674-e07ee3d4fc82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[П О В Е Л Е Т Е    П О В Т О Р Н О ! ! !]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="18" width="55" height="24" uuid="12780ef9-b24d-4a71-b35b-27631e2b5954"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["#00"+$F{PRODAZBA_ID}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="40" y="40" width="55" height="30" uuid="fd82650e-ea4f-4ad8-a186-378dba85b207"/>
+			</frame>
+			<line>
+				<reportElement x="-15" y="77" width="166" height="1" uuid="46c91d4c-09fe-4c95-977e-f1ad9a5f5f92"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="67" y="0" width="38" height="13" uuid="72665c56-3192-4168-9854-37905927f43d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="335bee18-75c3-4c7c-9c0c-6262b817383d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KOLICINA}+"x"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="39" height="13" uuid="98c4d270-02eb-44a0-9a75-517f5d52ce49">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27b33234-67ab-4794-b275-e4d279d8eff3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CENA}+" ден"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-11" y="16" width="46" height="13" uuid="c81fbd35-e590-473b-b318-ff207a26e294">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c5aa2d5-1a0f-4093-8422-10fea35a7796"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROIZVOD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="16" width="39" height="14" uuid="45e3ed01-0d2b-45f9-ac3e-44eb17c203c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9428138d-a2d3-42f9-878e-6967722684a9"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VKUPNO}+" ден"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-11" y="0" width="46" height="12" uuid="26b459ea-baa5-45c3-a845-ad4d87162fa2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="393df9b1-c765-4e39-8e21-e12d6f2824a3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"+$F{BARKOD_ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="16" splitType="Stretch"/>
+	</summary>
+</jasperReport>
